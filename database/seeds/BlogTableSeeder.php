@@ -53,6 +53,7 @@ Bautista Agut và Pella từng gặp nhau 2 lần trong quá khứ, với chiế
 
 Trong khi đó ở vòng trước, Pella vượt qua “máy bắn bóng” Milos Raonic trong 5 set theo cách vô cùng xuất sắc. Pella bị dẫn 2-0 nhưng đã tạo nên một cú lội ngược dòng khó tin để thắng lại ở 3 set cuối, trong đó có 3 lần giành break. Tuy nhiên nếu nhìn về hiệu suất thi đấu và khả năng kiểm soát, Bautista Agut vẫn đang ở trên Pella một bậc.";
             $blog->view = 0;
+            $blog->like = 0;
             $blog->image = 'https://cdn.24h.com.vn/upload/3-2019/images/2019-07-10/Truc-tiep-tennis-Wimbledon-ngay-9-De-cho-Federer-thu-thach-cho-Nadal-va-Djokovic-fed1-1562727292-842-width660height422.jpg';
             $blog->save();
         }
