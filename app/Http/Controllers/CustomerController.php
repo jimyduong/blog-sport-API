@@ -26,12 +26,12 @@ class CustomerController extends Controller
 
     public function view($id)
     {
-        $blogKey = 'product_' . $id;
-        if (!Session::has($blogKey)) {
-            Blog::where('id', $id)->increment('view');
-            Session::put($blogKey, 1);
-            Session::forget($blogKey);
-        }
+//        $blogKey = 'product_' . $id;
+//        if (!Session::has($blogKey)) {
+//            Blog::where('id', $id)->increment('view');
+//            Session::put($blogKey, 1);
+//            Session::forget($blogKey);
+//        }
         $blog = Blog::findOrFail($id);
         return view('customer.view', compact('blog'));
     }

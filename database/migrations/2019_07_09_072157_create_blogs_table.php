@@ -18,8 +18,8 @@ class CreateBlogsTable extends Migration
             $table->string('post_title');
             $table->string('description');
             $table->text('content');
-            $table->string('view');
-            $table->string('like');
+            $table->integer('view');
+            $table->integer('like');
             $table->string('image');
             $table->timestamps();
         });
