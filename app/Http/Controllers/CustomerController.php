@@ -32,7 +32,10 @@ class CustomerController extends Controller
 //            Session::put($blogKey, 1);
 //            Session::forget($blogKey);
 //        }
+
         $blog = Blog::findOrFail($id);
+        $blog->view++;
+        $blog->save();
         return view('customer.view', compact('blog'));
     }
     public function search(Request $request)
