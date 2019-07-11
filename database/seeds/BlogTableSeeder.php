@@ -55,6 +55,7 @@ Trong khi đó ở vòng trước, Pella vượt qua “máy bắn bóng” Milo
             $blog->view = 0;
             $blog->like = 0;
             $blog->image = 'https://cdn.24h.com.vn/upload/3-2019/images/2019-07-10/Truc-tiep-tennis-Wimbledon-ngay-9-De-cho-Federer-thu-thach-cho-Nadal-va-Djokovic-fed1-1562727292-842-width660height422.jpg';
+            $blog->category_id=2;
             $blog->save();
         }
     }
