@@ -1,12 +1,12 @@
-@extends('home')
+@extends('homecustomer')
 @section('title', 'News')
 
 @section('content')
     <!-- Blog Entries Column -->
     <div class="col-md-8">
 
-        <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
+        <h1 class="my-4">Định viết gì vào đây.
+            <small>nhưng lại không biết viết gì! </small>
         </h1>
         <hr>
         <a class="btn btn-outline-primary" href="" data-toggle="modal" data-target="#categoryModal">

@@ -1,4 +1,4 @@
-@extends('home')
+@extends('homecustomer')
 @section('title', $blog->post_title)
 
 @section('content')

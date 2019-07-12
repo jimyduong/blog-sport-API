@@ -33,7 +33,7 @@
                         <select class="form-control" name="category_id">
                             @foreach($category as $cate)
                                 <option
-                                        @if($blog->city_id == $cate->id)
+                                        @if($blog->category_id == $cate->id)
                                         {{"selected"}}
                                         @endif
                                         value="{{$cate->id}}">{{$cate->name}}</option>

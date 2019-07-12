@@ -13,14 +13,23 @@
                     <div class="form-group">
                         <label>Tên bài viết </label>
                         <input type="text" class="form-control" name="post_title" required>
+                        @if($errors->has('post_title'))
+                            <p class=" text-danger">{{ $errors->first('post_title') }}</p>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Description</label>
                         <textarea type="text" class="form-control" name="description" required></textarea>
+                        @if($errors->has('description'))
+                            <p class=" text-danger">{{ $errors->first('description') }}</p>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Content</label>
                         <textarea type="text" class="form-control" name="contents" required></textarea>
+                        @if($errors->has('contents'))
+                            <p class=" text-danger">{{ $errors->first('contents') }}</p>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label>Image</label>

@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Category;
+use App\Http\Requests\CreateBlogRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $blogs = Blog::orderby('created_at', 'desc')->paginate(10);
@@ -22,7 +28,7 @@ class AdminController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(CreateBlogRequest $request)
     {
         $blog = new Blog();
         $blog->post_title = $request->post_title;

@@ -36,3 +36,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('{id}/update','AdminController@update')->name('admin.update');
     Route::get('{id}/destroy','AdminController@destroy')->name('admin.destroy');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

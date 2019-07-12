@@ -24,27 +24,44 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/blog-home.css" rel="stylesheet">
     <link href="css/blog-post.css" rel="stylesheet">
+    <link href="css/drop-button.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top" style="background: lightblue">
     <div class="container">
-        <a class="navbar-brand text-white" href="{{route('customer.index')}}"><h3>Sport Blog</h3></a>
+        <a class="navbar-brand text-white" href="{{route('admin.index')}}"><h3>Sport Blog</h3></a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{route('admin.index')}}">
-                        <button type="button" class="btn btn-outline-danger">Home</button>
-                    </a>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-danger ">Menu</button>
+                        <div class="dropdown-content dropdown-menu">
+                            <a href="{{route('customer.index')}}">Customer page</a>
+                            <a href="{{route('admin.index')}}">Admin page</a>
+                            <a href="{{route('category.index')}}">Category page</a>
+                            <hr>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </div>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @else
+                    <li class="nav-item dropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+
             </ul>
         </div>
     </div>
