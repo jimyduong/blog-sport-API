@@ -60,7 +60,7 @@ class CustomerController extends Controller
     {
         $idCategory = $request->input('category_id');
         $categoryFilter = Category::findOrFail($idCategory);
-        $blogs = Blog::where('category_id', $categoryFilter->id)->paginate(3);
+        $blogs = Blog::where('category_id', $categoryFilter->id)->orderby('created_at', 'desc')->paginate(3);
         $totalPostFilter = count($blogs);
         $category = Category::all();
 

@@ -40,28 +40,20 @@
                             <a href="{{route('admin.index')}}">Admin page</a>
                             <a href="{{route('category.index')}}">Category page</a>
                             <hr>
+                            {{--logout--}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                        </div>
-                    </div>
-                </li>
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                @else
-                    <li class="nav-item dropdown">
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+                            {{--//--}}
                         </div>
-                    </li>
-                @endguest
-
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

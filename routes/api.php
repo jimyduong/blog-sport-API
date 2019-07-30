@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/index','CustomerControllerAPI@index');
+Route::get('/showbyview','CustomerControllerAPI@showByView');
+Route::get('/showbylike','CustomerControllerAPI@showByLike');
+Route::get('view/{id}','CustomerControllerAPI@view');
+Route::get('search','CustomerControllerAPI@search');
+Route::get('filter','CustomerControllerAPI@filterByCategory');
